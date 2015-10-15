@@ -8,7 +8,6 @@ const input$ = filterObsByName(subject, 'input')
   .startWith('')
 
 const save$ = filterObsByName(subject, 'save')
-  .startWith(undefined)
 
 const inputValue$ = Observable.merge(
   input$,
@@ -18,13 +17,20 @@ const inputValue$ = Observable.merge(
 const newTodo$ = save$
   .withLatestFrom(input$, (save, input) => { return input })
   .filter(input => { return input.length > 0 })
+  .map(newTodo => {
+    return {
+      text: newTodo,
+      completed: false
+    }
+  })
 
 const todoList$ = newTodo$
   .scan((todoList, newTodo) => {
-    todoList.push(newTodo)
+    const id = newTodo.text
+    todoList[id] = newTodo
     return todoList
-  }, [])
-  .startWith([])
+  }, {})
+  .startWith({})
 
 
 export default Observable

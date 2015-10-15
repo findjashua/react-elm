@@ -2,9 +2,12 @@ import React from 'react'
 import _ from 'lodash'
 
 import NewTodo from './new-todo'
+import TodoItem from './todo-item'
 
 export default (props) => {
-  const TodoList = props.todoList.map((todo, i) => { return <p key={i}>{todo}</p> })
+  const TodoList = _.map(props.todoList, (todo, id) => {
+    return <TodoItem key={id} todo={todo}/>
+  })
   return (
     <div>
       <NewTodo {..._.pick(props, 'inputValue')}/>
