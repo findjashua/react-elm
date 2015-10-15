@@ -4,9 +4,14 @@ import subject from '../subject'
 import { publish } from '../utils'
 
 export default (props) => {
+  const { id, todo } = props
+  const color = todo.completed ? 'green' : 'red'
   return (
-    <div>
-      {props.todo.text}
+    <div
+      style={{color}}
+      onClick={publish.bind(null, subject, {name: 'toggle', id: id})}
+      >
+      {todo.text}
     </div>
   )
 }
