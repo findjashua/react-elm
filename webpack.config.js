@@ -8,6 +8,7 @@ module.exports = {
     path: __dirname + '/dist',
     filename: 'build.js'
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
