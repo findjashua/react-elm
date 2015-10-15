@@ -5,6 +5,6 @@ import todos$ from './state/todos'
 import Todos from './components/todos'
 
 todos$
-  .subscribe((todos) => {
+  .subscribe(todos => {
       ReactDOM.render(<Todos {...todos}/>, document.getElementById('root'));
   })
