@@ -1,11 +1,10 @@
+import React from 'react'
 import ReactDOM from 'react-dom'
 
-import store$ from './state/store'
-import getApp$ from './components/app'
+import todos$ from './state/todos'
+import Todos from './components/todos'
 
-const app$ = store$.map((store) => { return store.app })
-const App$ = getApp$(app$)
-
-App$.subscribe((App) => {
-    ReactDOM.render(App, document.getElementById('app'));
-})
+todos$
+  .subscribe((todos) => {
+      ReactDOM.render(<Todos {...todos}/>, document.getElementById('root'));
+  })
