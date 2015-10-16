@@ -9,10 +9,10 @@ export const NewTodo = (props) => {
       <input
         placeholder={'New Todo'}
         value={props.inputValue}
-        onChange={publish.bind(null, subject, {name: 'input'})} />
+        onChange={publish.bind(null, subject, {name: 'todo_input'})} />
       <button
         disabled={props.inputValue.length === 0}
-        onClick={publish.bind(null, subject, {name: 'save'})}>
+        onClick={publish.bind(null, subject, {name: 'todo_save'})}>
         Save
       </button>
     </div>

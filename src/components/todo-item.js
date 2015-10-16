@@ -7,7 +7,7 @@ export const TodoItem = (props) => {
   const { id, todo } = props
   const color = todo.completed ? 'green' : 'red'
   const payload = {
-    name: 'toggle',
+    name: 'todo_toggle',
     data: { id }
   }
   return (
