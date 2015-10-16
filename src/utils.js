@@ -1,10 +1,7 @@
-export const publish = (subject, data, synthEvt) => {
+export const publish = (subject, payload, synthEvt) => {
   subject.onNext({
-    data,
+    name: payload.name,
+    data: payload.data,
     synthEvt
   })
-}
-
-export const filterObsByName = (obs, name) => {
-  return obs.filter((evt) => { return evt.data.name === name })
 }

@@ -7,7 +7,7 @@ const initialState = {
 
 export default subject
   .scan((state, evt) => {
-    switch (evt.data.name) {
+    switch (evt.name) {
       case 'input':
         state.inputValue = evt.synthEvt.target.value
         break
