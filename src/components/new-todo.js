@@ -12,7 +12,7 @@ export const NewTodo = (props) => {
         onChange={publish.bind(null, subject, {name: 'todo_input'})} />
       <button
         disabled={props.inputValue.length === 0}
-        onClick={publish.bind(null, subject, {name: 'todo_save'})}>
+        onClick={publish.bind(null, subject, {name: 'todo_add'})}>
         Save
       </button>
     </div>

@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 import subject from '../subject'
 
 const initialState = {
@@ -7,15 +9,16 @@ const initialState = {
 
 export default subject
   .scan((state, evt) => {
+    let id
     switch (evt.name) {
       case 'todo_input':
         state.inputValue = evt.synthEvt.target.value
         break
 
-      case 'todo_save':
+      case 'todo_add':
         const newTodo = state.inputValue
-        const id_save = newTodo
-        state.todoList[id_save] = {
+        id = newTodo
+        state.todoList[id] = {
           text: newTodo,
           completed: false
         }
@@ -23,8 +26,13 @@ export default subject
         break
 
       case 'todo_toggle':
-        const id_toggle = evt.data.id
-        state.todoList[id_toggle].completed = !state.todoList[id_toggle].completed
+        id = evt.data.id
+        state.todoList[id].completed = !state.todoList[id].completed
+        break
+
+      case 'todo_delete':
+        id = evt.data
+        state.todoList = _.omit(state.todoList, id)
         break
     }
     return state
