@@ -12,6 +12,7 @@ export const TodoItem = (props) => {
   }
   return (
     <div
+      key={id}
       style={{textDecoration}}
       onClick={publish.bind(null, subject, payload)}
       >

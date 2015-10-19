@@ -2,16 +2,16 @@ import React from 'react'
 import _ from 'lodash'
 
 import { NewTodo } from './new-todo'
-import { TodoItem } from './todo-item'
+import { TodoList } from './todo-list'
+import { Filter } from './filter-todo'
 
 export const Todos = (props) => {
-  const TodoList = _.map(props.todoList, (todo, id) => {
-    return <TodoItem key={id} id={id} todo={todo}/>
-  })
+  const { filter, todoList } = props
   return (
     <div>
       <NewTodo {..._.pick(props, 'inputValue')}/>
-      <ul>{TodoList}</ul>
+      <Filter {..._.pick(props, 'filters', 'currentFilter')}/>
+      <TodoList {..._.pick(props, 'todoList', 'currentFilter')}/>
     </div>
   )
 }

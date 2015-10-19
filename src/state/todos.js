@@ -4,7 +4,9 @@ import subject from '../subject'
 
 const initialState = {
   inputValue: '',
-  todoList: {}
+  todoList: {},
+  filters: ['all', 'completed', 'incomplete'],
+  currentFilter: 'all'
 }
 
 export default subject
@@ -29,6 +31,10 @@ export default subject
       case 'todo_toggle':
         id = evt.data.id
         state.todoList[id].completed = !state.todoList[id].completed
+        break
+
+      case 'todo_filter':
+        state.currentFilter = evt.synthEvt.target.value
         break
 
       case 'todo_delete':
