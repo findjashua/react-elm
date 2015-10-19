@@ -15,7 +15,8 @@ export default subject
         state.inputValue = evt.synthEvt.target.value
         break
 
-      case 'todo_add':
+      case 'todo_keyup':
+        if (evt.synthEvt.keyCode !== 13) break
         const newTodo = state.inputValue
         id = newTodo
         state.todoList[id] = {
