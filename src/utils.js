@@ -1,5 +1,3 @@
-import _ from 'lodash'
-
 import subject from './subject'
 
-export const publish = (payload, synthEvt) => subject.onNext(_.extend(payload, { synthEvt }))
+export const publish = (payload, synthEvt) => subject.onNext(Object.assign(payload, { synthEvt }))
