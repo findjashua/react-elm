@@ -1,7 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
 
-import subject from '../subject'
 import { publish } from '../utils'
 
 const Options = filters => {
@@ -19,7 +18,7 @@ export const Filter = (props) => {
   return (
     <select
       value={currentFilter}
-      onChange={publish.bind(null, subject, {name: 'todo_filter'})}>
+      onChange={publish.bind(null, {name: 'todo_filter'})}>
       {Options(filters)}
     </select>
   )
