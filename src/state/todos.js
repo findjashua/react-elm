@@ -5,7 +5,6 @@ import subject from '../subject'
 const initialState = {
   inputValue: '',
   todoList: {},
-  filters: ['all', 'completed', 'incomplete'],
   currentFilter: 'all'
 }
 

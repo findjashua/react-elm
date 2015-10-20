@@ -7,6 +7,9 @@ import { Filter } from './filter-todo'
 
 export const Todos = (props) => {
   const { filter, todoList } = props
+  props = Object.assign({}, props, {
+    filters: ['all', 'completed', 'incomplete']
+  })
   return (
     <div>
       <NewTodo {..._.pick(props, 'inputValue')}/>
