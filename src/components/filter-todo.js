@@ -13,7 +13,7 @@ const Options = filters => {
   })
 }
 
-export const Filter = (props) => {
+export const Filter = props => {
   const { currentFilter, filters } = props
   return (
     <select

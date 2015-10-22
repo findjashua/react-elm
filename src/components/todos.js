@@ -5,7 +5,7 @@ import { NewTodo } from './new-todo'
 import { TodoList } from './todo-list'
 import { Filter } from './filter-todo'
 
-export const Todos = (props) => {
+export const Todos = props => {
   const { filter, todoList } = props
   props = Object.assign({}, props, {
     filters: ['all', 'completed', 'incomplete']

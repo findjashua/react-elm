@@ -21,7 +21,7 @@ const getFilteredTodoList = (todoList, filter) => {
   }
 }
 
-export const TodoList = (props) => {
+export const TodoList = props => {
   const todoList = getFilteredTodoList(props.todoList, props.currentFilter)
   const items = _.map(todoList, (todo, id) => <TodoItem key={id} id={id} todo={todo}/>)
   return <ul>{items}</ul>

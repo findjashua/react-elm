@@ -2,7 +2,7 @@ import React from 'react'
 
 import { publish } from '../utils'
 
-export const NewTodo = (props) => {
+export const NewTodo = props => {
   return (
     <div>
       <input

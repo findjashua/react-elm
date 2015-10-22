@@ -2,7 +2,7 @@ import React from 'react'
 
 import { publish } from '../utils'
 
-export const TodoItem = (props) => {
+export const TodoItem = props => {
   const { id, todo } = props
   const textDecoration = todo.completed ? 'line-through' : 'none'
   const payload = {
